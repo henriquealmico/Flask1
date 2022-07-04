@@ -2,7 +2,7 @@ from flask import Flask
 from .extensions import db, migrate
 from .config import Config
 
-from app.Cao.model import cao_api
+from app.Cao.routes import cao_api
 from app.cat.model import gato_api
 from app.dono.model import dono_api
 

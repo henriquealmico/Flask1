@@ -17,5 +17,5 @@ class Dono(BaseModel):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(20))
 
-    cao = db.relationship("Cao", backref="dono", uselist=False)
-    gatos = db.relationship("Cat", secondary="donos_gatos", backref="donos")
+    #cao = db.relationship("Cao", backref="dono", uselist=False)
+    #gatos = db.relationship("Cat", secondary="donos_gatos", backref="donos")
