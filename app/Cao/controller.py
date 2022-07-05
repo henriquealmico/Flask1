@@ -10,20 +10,20 @@ class CaoCreate(MethodView):  #/registro
 
         body = request.json
 
-        #id = body.get('id')
+        id = body.get('id')
         nome = body.get('nome')
         raca = body.get('raca')
         cor = body.get('cor')
-        #data_nascimento = body.get('data_nascimento')
+        data_nascimento = body.get('data_nascimento')
         nacionalidade = body.get('nacionalidade')
-        #dono = body.get('dono')
+        dono = body.get('dono')
 
         if isinstance(nome, str) and \
             isinstance(raca, str) and \
                 isinstance(cor, str) and \
                     isinstance(nacionalidade, str):
                         
-            cao = Cao.query.filter_by(id=id).first()
+            cao = Cao.query.filter_by(nome=nome).first()
 
             if cao:
                 return {"code_status": "Dados inválidos, cao ja cadastrado"}, 400
@@ -31,7 +31,7 @@ class CaoCreate(MethodView):  #/registro
             cao = Cao(nome=nome, 
                         raca=raca, 
                         cor=cor, 
-                        #data_nascimento=data_nascimento#, 
+                        data_nascimento=data_nascimento, 
                         nacionalidade=nacionalidade)
 
             cao.save()
